@@ -26,22 +26,30 @@ funct_Prime
 
 function funct_palindrome()
 {
-new=0;
-temp=$n;
-while (( $n > 0 ))
-        do
-                r=$(( $n % 10 ));
-                new=$(( ($new*10) + $r ));
-                n=$(( $n / 10 ));
-        done
-if [ $temp -eq $new ]
-        then
-                echo "$temp is a palindrome number" ;
-        else
-                echo "$temp is not a palindrome number" ;
-
-fi
+	 	echo "enter any 5 three digit number to check palindrome" 
+		for (( i=0;i<5;i++ ))
+			do
+				read  x[i] ;
+			done
+echo "from given ARRAY ${x[@]} ";
+echo "palindrome is : ";
+		for (( i=0;i<5;i++))
+			do
+				temp[i]=${x[i]};
+				a=${x[i]};	
+	
+		new=0;
+			while [ $a -gt 0 ]
+        			do
+                			r=$(( $a % 10 ));
+                			new=$(( ($new*10) + $r ));
+                			a=$(( $a / 10 ));
+       	done
+		if [ ${temp[i]} -eq $new ]
+        		then
+                	
+                		echo ${temp[i]} ;
+		fi
+done
 }
 funct_palindrome
-
-
