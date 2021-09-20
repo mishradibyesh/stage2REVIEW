@@ -24,3 +24,24 @@ if [ $n -eq 1 ]
 }
 funct_Prime
 
+function funct_palindrome()
+{
+new=0;
+temp=$n;
+while (( $n > 0 ))
+        do
+                r=$(( $n % 10 ));
+                new=$(( ($new*10) + $r ));
+                n=$(( $n / 10 ));
+        done
+if [ $temp -eq $new ]
+        then
+                echo "$temp is a palindrome number" ;
+        else
+                echo "$temp is not a palindrome number" ;
+
+fi
+}
+funct_palindrome
+
+
